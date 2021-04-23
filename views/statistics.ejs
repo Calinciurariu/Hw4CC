@@ -28,13 +28,58 @@
             </div>
 
             <div class="card flex-30">
-                <p class="title">Place rating</p>
+                <p class="title">Time</p>
 
                 <div class="content">
-                    <p class="time">Time</p>
+                    <p class="time" id="tme"></p>
+                </div>
+            </div>
+            <div class="card flex-60">
+                <p class="title">Latitude</p>
+
+                <div class="content" id="latpid"  ></div>
+            </div>
+
+            <div class="card flex-30">
+                <p class="title">longitude</p>
+
+                <div class="content">
+                    <p class="time" id="longpid" ></p>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+         var place =document.getElementById('tme');
+         var longp =document.getElementById('longpid');
+         var latp =document.getElementById('latpid');
+
+    
+        var lo =      localStorage.getItem("longitude");
+       var  la = localStorage.getItem("latitude");
+       longp.innerText = lo;
+       latp.innerText = la;
+       var r;
+     let request = new XMLHttpRequest();
+     request.open("GET","https://custom-functions4hwcc.azurewebsites.net/api/TellTheTime?code=MAtDtPaTnTJ64gncCNxRzjJGEcvgjdfob9ri3ahTReIG5MF7RGMQTw==");
+     request.send();
+     request.onload = ()=>{
+        if (request.status===200)
+        {
+            console.log(request.response);
+          place.value = request.response;
+           place.innerText = request.response;
+        }
+        else {
+            console.log(`error ${request.status} with ${request.statusText}`);
+            alert(`error ${request.status} with ${request.statusText}`);
+        }
+     }
+   
+              
+   
+
+
+    </script>
 </body>
 </html>
