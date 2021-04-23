@@ -2,8 +2,8 @@
 body {
   margin: 0;
   padding: 0;
-  background: #e0e0e0;
-  font-family: system-ui !important;
+  font-family: system-ui, sans-serif;
+  background: #f7f7f7;
 }
 
 p {
@@ -25,9 +25,9 @@ a:hover {
 }
 
 .navbar {
-  background: #0c95f6;
+  background: #f6d90c;
   padding: 10px 10%;
-  box-shadow: 0 0 5px #0c95f6;
+  box-shadow: 0 0 5px #88877f;
   width: 100%;
   display: flex;
   align-items: center;
@@ -38,7 +38,7 @@ a:hover {
   display: flex;
   align-items: center;
   font-size: 14px;
-  color: #fff;
+  color: #2900ff;
 }
 
 .navbar .back i {
@@ -46,11 +46,11 @@ a:hover {
 }
 
 .navbar .back:hover {
-  color: #cfcfcf;
+  color: #000000;
 }
 
 .navbar .title {
-  color: #fff;
+  color: #000;
   font-size: 24px;
 }
 
@@ -80,7 +80,7 @@ a:hover {
 .card .title {
   font-size: 14px;
   padding: 6px 10px;
-  background: #0c95f6;
+  background: #f6d90c;
   color: #fff;
   font-weight: 600;
 }
@@ -137,7 +137,7 @@ a:hover {
   padding: 2px 14px;
   font-size: 14px;
   background: #fff;
-  color: #0c95f6;
+  color: #f6d90c;
   font-weight: 600;
 }
 
@@ -146,7 +146,7 @@ a:hover {
 }
 
 .btn-action:hover {
-  background: #0c95f6;
+  background: #f6d90c;
   color: #fff;
 }
 
@@ -176,7 +176,7 @@ a:hover {
   position:relative;
 }
 
-input 				{
+input, select 				{
   font-size:18px;
   padding:10px 10px 10px 5px;
   display:block;
@@ -217,7 +217,7 @@ input 				{
 
 /* LABEL ======================================= */
 label 				 {
-  color:#0c95f6;
+  color:#f6d90c;
   font-size: 15px;
   font-weight:normal;
   position:absolute;
@@ -244,7 +244,7 @@ input:focus ~ label, input:valid ~ label 		{
   width:0;
   bottom:1px;
   position:absolute;
-  background:#0c95f6;
+  background:#f6d90c;
   transition:0.2s ease all;
   -moz-transition:0.2s ease all;
   -webkit-transition:0.2s ease all;
@@ -283,8 +283,8 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
 
 #submitButton:hover {
   cursor: pointer;
-  border: 1px solid #0c95f6;
-  color: #0c95f6;
+  border: 1px solid #f6d90c;
+  color: #f6d90c;
 }
 
 /* active state */
@@ -300,14 +300,22 @@ input:focus ~ .highlight {
 
 /* ANIMATIONS ================ */
 @-webkit-keyframes inputHighlighter {
-  from { background:#0c95f6; }
+  from { background:#f6d90c; }
   to 	{ width:0; background:transparent; }
 }
 @-moz-keyframes inputHighlighter {
-  from { background:#0c95f6; }
+  from { background:#f6d90c; }
   to 	{ width:0; background:transparent; }
 }
 @keyframes inputHighlighter {
-  from { background:#0c95f6; }
+  from { background:#f6d90c; }
   to 	{ width:0; background:transparent; }
+}
+
+.select-purpose {
+  background: #ffffff;
+}
+
+.select-purpose:focus {
+  outline: none;
 }

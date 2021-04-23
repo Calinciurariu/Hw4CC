@@ -7,13 +7,23 @@
 
     <body>
         <nav class="navbar">
-            <p class="title">Trip simulator</p>
+            <p class="title">Multi-purpose API</p>
         </nav>
 
         <div class="container">
+            <h3 id="message"></h3>
+
             <form action="/search" method="POST" class="search" >
+                <select id="purpose-selector" name="purpose" class="select-purpose">
+                    <option value="recognize-language">Recognize language</option>
+                    <option value="translate">Translate something</option>
+                    <option value="detect-image-info">Detect image information</option>
+                    <option value="detect-face">Detect face information</option>
+                    <option value="key-phrase">Get sentence's key phrases</option>
+                </select>
+
                 <div class="group">
-                  <input name="search" type="text" placeholder="Search for a place.." required>
+                  <input name="search" type="text" placeholder="Search.." required>
 
                   <span class="highlight"></span>
                   <span class="bar"></span>
@@ -22,6 +32,42 @@
                   <button class="group" id="submitButton" type="submit"><i>Search</i></button>
               </form>
         </div>
-        
+
+        <script>
+            var selectorElement = document.getElementById('purpose-selector');
+            var messageElement = document.getElementById('message');
+
+            const recognizeLanguageMessage = 'Sky is the limit! Type anything';
+            const translateMessage = 'Sky is the limit! Type anything';
+            const detectImageInfoMessage = 'Type a link with an image';
+            const detectFaceMessage = 'Put a link with an image that contains your face';
+            const keyPhraseMessage = 'Type a sentence.';
+
+            messageElement.textContent = recognizeLanguageMessage;
+
+            selectorElement.addEventListener('change', function (evt) {
+                const purpose = evt.target.value;
+
+                switch (purpose) {
+                    case 'translate':
+                        messageElement.textContent = translateMessage;
+                        break;
+                    case 'recognize-language':
+                        messageElement.textContent = recognizeLanguageMessage;
+                        break;
+                    case 'detect-image-info':
+                        messageElement.textContent = detectImageInfoMessage;
+                        break;
+                    case 'detect-face':
+                        messageElement.textContent = detectFaceMessage;
+                        break;
+                    case 'key-phrase':
+                        messageElement.textContent = keyPhraseMessage;
+                        break;
+                    default:
+                        break;
+                }
+            });
+        </script>
     </body>
 </html>
