@@ -25,6 +25,22 @@ app.use(function(req, res, next) {
   next(createError(404));
 });
 
+app.post('/search', (req, res) => {
+  const search = req.body.search;
+
+  const place = placeService.search(search, (result) => {
+    if (result) {
+      datastore.storeSearchRecord({
+        search_key: search,
+        place_result: result.name,
+        place_address: result.formatted_address
+      });
+    }
+
+    res.render("statistics", { place: result });
+  });
+});
+
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
@@ -34,10 +50,12 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
-})
 
-app.listen(8080,(req, res) => {
-  console.log('Test');
+
+  //res.status(err.status || 500);
+  //res.render('error');
 });
-
+// app.listen(8080,(req, res) => {
+//   console.log('Test');
+// });
 module.exports = app;
