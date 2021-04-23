@@ -1,7 +1,5 @@
-require('dotenv').config();
-
-const URL = process.env.IMAGE_DETECTION_URL;
-const KEY = process.env.IMAGE_DETECTION_KEY;
+const URL = 'https://northeurope.api.cognitive.microsoft.com/vision/v3.0/analyze?visualFeatures=Categories&language=en';
+const KEY = '58d1eaf504044d77935864cb13daf3ab';
 
 const fetch = require('node-fetch');
 

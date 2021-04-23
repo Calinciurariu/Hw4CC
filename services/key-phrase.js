@@ -1,7 +1,5 @@
-require('dotenv').config();
-
-const URL = process.env.KEY_PHRASE_URL;
-const KEY = process.env.KEY_PHRASE_KEY;
+const URL = 'https://northeurope.api.cognitive.microsoft.com/text/analytics/v2.1/keyPhrases';
+const KEY = '4bd04eb57127477ca1212f8b1bcdd8ee';
 
 const fetch = require('node-fetch');
 
